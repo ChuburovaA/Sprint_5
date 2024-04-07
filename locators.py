@@ -20,3 +20,13 @@ class StellarBurgersLocators:
     MAIN_PAGE_SOUCES_TAB = (By.XPATH, ".//body//main//span[text()='Соусы']")  # Вкладка Соусы
     MAIN_PAGE_FILLINGS_TAB = (By.XPATH, ".//body//main//span[text()='Начинки']")  # Вкладка Начинки
     MAIN_PAGE_TAB_CONSTRUCTOR = (By.XPATH, ".//div[contains(@class, 'current')]/span")  # выбранный таб в конструкторе
+
+    # Личный кабинет
+    PROFILE_PAGE_LOGO_LINK = (
+    By.XPATH, ".//body//header//div/a[@href='/']")  # Ссылка на Лого на странице Личный кабинет
+    PROFILE_PAGE_CONSTRUCTOR_LINK = (
+    By.XPATH, ".//body//header//p[text()='Конструктор']")  # Сссылка на Конструктор на странице Личный кабинет
+    PROFILE_PAGE_SAVE_BUTTON = (
+    By.XPATH, ".//body//main//button[text()='Сохранить']")  # Кнопка "Сохранить" на странице Личный кабинет
+    PROFILE_PAGE_EXIT_BUTTON = (
+    By.XPATH, ".//body//main//button[text()='Выход']")  # Кнопка "Выход" на странице Личный кабинет
