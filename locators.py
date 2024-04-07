@@ -14,3 +14,9 @@ class StellarBurgersLocators:
     By.XPATH, ".//button[text()='Войти в аккаунт']")  # Кнопка "Войти в аккаунт" на главной странице
     MAIN_PAGE_ORDER_BUTTON = (
     By.XPATH, ".//button[text()='Оформить заказ']")  # Кнопка "Оформить заказ" на главной странице
+
+    # Раздел Конструктор
+    MAIN_PAGE_BREAD_TAB = (By.XPATH, ".//body//main//span[text()='Булки']")  # Вкладка Булки
+    MAIN_PAGE_SOUCES_TAB = (By.XPATH, ".//body//main//span[text()='Соусы']")  # Вкладка Соусы
+    MAIN_PAGE_FILLINGS_TAB = (By.XPATH, ".//body//main//span[text()='Начинки']")  # Вкладка Начинки
+    MAIN_PAGE_TAB_CONSTRUCTOR = (By.XPATH, ".//div[contains(@class, 'current')]/span")  # выбранный таб в конструкторе
