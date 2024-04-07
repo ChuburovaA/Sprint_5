@@ -33,6 +33,7 @@ class StellarBurgersLocators:
 
     MAIN_PAGE_PROFILE_LINK = (By.XPATH, ".//header//a[@href='/account']")  # Ссылка "Личный Кабинет" на главной странице
 
+
     # Форма авторизации
     AUTH_PAGE_LOGIN_BUTTON = (By.XPATH, ".//button[text()='Войти']")  # Кнопка "Войти" на странице авторизации
     AUTH_PAGE_LOGIN_FIELD = (By.XPATH, ".//input[@name='name']")  # Поле ввода логина
