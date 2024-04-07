@@ -11,3 +11,8 @@ def driver():
     yield driver # возвращает
 
     driver.quit()
+
+@pytest.fixture(scope='function')
+def page():
+    page = StellarBurgersLocators()
+    return page
