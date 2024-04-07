@@ -29,3 +29,11 @@ class TestLogInStellarBurgers:
         driver.find_element(*page.MAIN_PAGE_PROFILE_LINK).click()
 
         assert driver.find_element(*page.AUTH_PAGE_LOGIN_BUTTON)
+
+    def test_check_button_login_in_form_registration(self, driver, page):
+        # нажать на ссылку "вход" в форме регистрации
+        driver.get(settings.URL + "/register")
+        WebDriverWait(driver, 5).until(expected_conditions.visibility_of_element_located(page.REG_PAGE_LOGIN_LINK))
+        driver.find_element(*page.REG_PAGE_LOGIN_LINK).click()
+
+        assert driver.find_element(*page.AUTH_PAGE_LOGIN_BUTTON)
