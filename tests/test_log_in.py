@@ -9,3 +9,15 @@ import settings
 
 
 class TestLogInStellarBurgers:
+    def test_check_button_login_in_main_page(self, driver, page):
+        # Нажатие на кнопку "Войти в аккаунт" на главной странице
+        driver.get(settings.URL)
+        WebDriverWait(driver, 5).until(expected_conditions.visibility_of_element_located(page.MAIN_PAGE_LOGIN_BUTTON))
+        driver.find_element(*page.MAIN_PAGE_LOGIN_BUTTON).click()
+        # теперь авторизируемся
+        driver.find_element(*page.AUTH_PAGE_LOGIN_FIELD).send_keys(StellarBurgersServiceTestData.AUTH_EMAIL)
+        driver.find_element(*page.AUTH_PAGE_PASSWORD_FIELD).send_keys(StellarBurgersServiceTestData.AUTH_PASSWORD)
+        driver.find_element(*page.AUTH_PAGE_LOGIN_BUTTON).click()
+        WebDriverWait(driver, 5).until(expected_conditions.visibility_of_element_located(page.MAIN_PAGE_ORDER_BUTTON))
+
+        assert driver.find_element(*page.MAIN_PAGE_ORDER_BUTTON)
