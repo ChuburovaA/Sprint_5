@@ -37,3 +37,11 @@ class TestLogInStellarBurgers:
         driver.find_element(*page.REG_PAGE_LOGIN_LINK).click()
 
         assert driver.find_element(*page.AUTH_PAGE_LOGIN_BUTTON)
+
+    def test_check_button_in_foggot_password(self, driver, page):
+        # нажать на кнопку(ссылку) "вход" в форме восстановления пароля
+        driver.get(settings.URL + "/forgot-password")
+        WebDriverWait(driver, 5).until(expected_conditions.visibility_of_element_located(page.RECOVER_PAGE_LINK))
+        driver.find_element(*page.RECOVER_PAGE_LINK).click()
+
+        assert driver.find_element(*page.AUTH_PAGE_LOGIN_BUTTON)
