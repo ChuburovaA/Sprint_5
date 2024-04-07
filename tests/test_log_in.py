@@ -21,3 +21,11 @@ class TestLogInStellarBurgers:
         WebDriverWait(driver, 5).until(expected_conditions.visibility_of_element_located(page.MAIN_PAGE_ORDER_BUTTON))
 
         assert driver.find_element(*page.MAIN_PAGE_ORDER_BUTTON)
+
+    def test_check_button_personal_account(self, driver, page):
+        # нажать на кнопку "Личный кабинет" с главной страницы
+        driver.get(settings.URL)
+        WebDriverWait(driver, 5).until(expected_conditions.visibility_of_element_located(page.MAIN_PAGE_PROFILE_LINK))
+        driver.find_element(*page.MAIN_PAGE_PROFILE_LINK).click()
+
+        assert driver.find_element(*page.AUTH_PAGE_LOGIN_BUTTON)
