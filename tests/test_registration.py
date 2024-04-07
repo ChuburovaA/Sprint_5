@@ -10,3 +10,19 @@ import settings
 
 
 class TestStellarBurgersRegistration:
+    def test_completed_registration(self, driver, page):
+        driver.get(settings.URL + "/register")
+        # оказалась на странице с регистрацией
+        driver.find_element(*page.USER_NAME_INPUT).send_keys(StellarBurgersServiceTestData.NAME)
+        email = generate_random_emails()
+        driver.find_element(*page.USER_EMAIL_INPUT).send_keys(email)
+        driver.find_element(*page.USER_PASSWORD_INPUT).send_keys("chuburova123")
+        driver.find_element(*page.REG_BUTTON).click()
+        # теперь после регистрации прохожу авторизацию на "Вход"
+        WebDriverWait(driver, 5).until(expected_conditions.visibility_of_element_located(page.AUTH_PAGE_LOGIN_BUTTON))
+        driver.find_element(*page.AUTH_PAGE_LOGIN_FIELD).send_keys(email)
+        driver.find_element(*page.AUTH_PAGE_PASSWORD_FIELD).send_keys("chuburova123")
+        driver.find_element(*page.AUTH_PAGE_LOGIN_BUTTON).click()
+        WebDriverWait(driver, 5).until(expected_conditions.visibility_of_element_located(page.MAIN_PAGE_ORDER_BUTTON))
+
+        assert driver.find_element(*page.MAIN_PAGE_ORDER_BUTTON)
