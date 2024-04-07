@@ -18,3 +18,11 @@ class TestConstructorStellarBurgers:
         assert driver.find_element(*page.MAIN_PAGE_TAB_CONSTRUCTOR).text == "Начинки"
         driver.find_element(*page.MAIN_PAGE_BREAD_TAB).click()
         assert driver.find_element(*page.MAIN_PAGE_TAB_CONSTRUCTOR).text == "Булки"
+
+    def test_open_sause_section(self, driver, page):
+        # проверяем в конструкторе, что переход работает в раздел "Соусы"
+        driver.get(settings.URL)
+        WebDriverWait(driver, 5).until(expected_conditions.visibility_of_element_located(page.MAIN_PAGE_LOGIN_BUTTON))
+        driver.find_element(*page.MAIN_PAGE_SOUCES_TAB).click()
+
+        assert driver.find_element(*page.MAIN_PAGE_TAB_CONSTRUCTOR).text == "Соусы"
