@@ -26,3 +26,16 @@ class TestStellarBurgersRegistration:
         WebDriverWait(driver, 5).until(expected_conditions.visibility_of_element_located(page.MAIN_PAGE_ORDER_BUTTON))
 
         assert driver.find_element(*page.MAIN_PAGE_ORDER_BUTTON)
+
+    def test_check_incorrect_password(self, driver, page):
+        # проверка ввода некорректного пароля
+        driver.get(settings.URL + "/register")  # оказалась на странице с регистрацией
+        WebDriverWait(driver, 5).until(expected_conditions.visibility_of_element_located(page.REG_BUTTON))
+        driver.find_element(*page.USER_NAME_INPUT).send_keys(StellarBurgersServiceTestData.NAME)
+        email = generate_random_emails()
+        driver.find_element(*page.USER_EMAIL_INPUT).send_keys(email)
+        driver.find_element(*page.USER_PASSWORD_INPUT).send_keys("al")
+        driver.find_element(*page.REG_BUTTON).click()
+        WebDriverWait(driver, 5).until(expected_conditions.visibility_of_element_located(page.REG_PAGE_ERROR_MESSAGE))
+
+        assert driver.find_element(*page.REG_PAGE_ERROR_MESSAGE)
