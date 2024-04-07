@@ -30,45 +30,49 @@
 
 Результаты теста:
 ================================================================= test session starts =================================================================
-platform win32 -- Python 3.12.2, pytest-8.1.1, pluggy-1.4.0 -- C:\Users\Admin\AppData\Local\Programs\Python\Python312\python.exe
-cachedir: .pytest_cache
-rootdir: C:\Users\Admin\Sprint_5
+platform win32 -- Python 3.12.2, pytest-8.1.1, pluggy-1.4.0 -- C:\Users\Admin\PycharmProjects\Sprin_5-main\.venv\Scripts\python.exe
+cachedir: .pytest_cache                                                                                                            
+rootdir: C:\Users\Admin\PycharmProjects\Sprin_5-main
 collected 13 items
 
 tests/test_chapter_constructor.py::TestConstructorStellarBurgers::test_open_bread_section
-DevTools listening on ws://127.0.0.1:59524/devtools/browser/cc65ed8d-0605-4133-822e-e26936c687ca
+DevTools listening on ws://127.0.0.1:63289/devtools/browser/e00793fb-ca19-4faf-914c-6abaaa7959dc
 PASSED                                                 [  7%]
 tests/test_chapter_constructor.py::TestConstructorStellarBurgers::test_open_sause_section 
-DevTools listening on ws://127.0.0.1:59547/devtools/browser/8925c2f1-9462-4bf4-a30a-33cdc27977b4
+DevTools listening on ws://127.0.0.1:63312/devtools/browser/cbdb6861-a3ec-4f18-ab7e-84ba2c2b2c82
 PASSED                                                 [ 15%]
 tests/test_chapter_constructor.py::TestConstructorStellarBurgers::test_open_filling_section 
-DevTools listening on ws://127.0.0.1:59572/devtools/browser/9f13579d-ee24-42a5-9811-410278734e03
+DevTools listening on ws://127.0.0.1:63336/devtools/browser/79f098f7-7f4c-4a64-8881-c8b62bb69560
 PASSED                                               [ 23%]
 tests/test_log_in.py::TestLogInStellarBurgers::test_check_button_login_in_main_page 
-DevTools listening on ws://127.0.0.1:59595/devtools/browser/96137dc7-bead-441e-a9cf-7ca581d477f5
+DevTools listening on ws://127.0.0.1:63361/devtools/browser/516e1203-1fb2-4154-af31-6877396d8afe
 PASSED                                                       [ 30%]
 tests/test_log_in.py::TestLogInStellarBurgers::test_check_button_personal_account 
-DevTools listening on ws://127.0.0.1:59619/devtools/browser/0b849607-dccf-4178-8ef4-1b90f54ddf53
+DevTools listening on ws://127.0.0.1:63385/devtools/browser/8e8b4288-933b-4ceb-b9f3-7d9ed245fded
 PASSED                                                         [ 38%]
 tests/test_log_in.py::TestLogInStellarBurgers::test_check_button_login_in_form_registration 
-DevTools listening on ws://127.0.0.1:59642/devtools/browser/e23b90b1-53a2-424b-bde7-cf06519226a9
+DevTools listening on ws://127.0.0.1:63408/devtools/browser/812d6375-b48e-4d4d-a61e-c48535a5e76d
 PASSED                                               [ 46%]
 tests/test_log_in.py::TestLogInStellarBurgers::test_check_button_in_foggot_password 
-DevTools listening on ws://127.0.0.1:59671/devtools/browser/c3b94283-b83b-40d4-b66a-d0697a854b30
+DevTools listening on ws://127.0.0.1:63431/devtools/browser/83c97b95-3838-4dd4-a0b1-e86fa8919afe
 PASSED                                                       [ 53%]
 tests/test_log_out.py::TestLogOutInAccountStellarBurgers::test_check_button_exit_in_account 
-DevTools listening on ws://127.0.0.1:59694/devtools/browser/839416fc-735b-4a64-97ad-6a51fbf246e0
+DevTools listening on ws://127.0.0.1:63455/devtools/browser/960f0ebf-9121-480d-8b49-557b73600749
 PASSED                                               [ 61%]
 tests/test_profile_page.py::TestProfilePageStellarBurgers::test_check_open_profile_from_main_page 
-DevTools listening on ws://127.0.0.1:59727/devtools/browser/cdffc599-c2c8-4d00-a757-257469d74e27
+DevTools listening on ws://127.0.0.1:63493/devtools/browser/7ab4b7f9-f3d9-4e37-9bb6-5309a27b7e10
 PASSED                                         [ 69%]
 tests/test_profile_page.py::TestProfilePageStellarBurgers::test_check_transfer_from_account_page_to_constructor 
-DevTools listening on ws://127.0.0.1:59751/devtools/browser/27b5eca5-3bfd-4ff5-83eb-3002e37c9145
+DevTools listening on ws://127.0.0.1:63516/devtools/browser/585bbb00-03fe-4da7-bdf0-ffef10cb916d
 PASSED                           [ 76%]
 tests/test_profile_page.py::TestProfilePageStellarBurgers::test_check_transfer_from_account_page_to_logo_stellarburgers 
-DevTools listening on ws://127.0.0.1:59776/devtools/browser/ee8fb215-3721-462c-95ce-ce792892742a
-ncorrect_password
-DevTools listening on ws://127.0.0.1:59823/devtools/browser/dbc5f7f3-0ba5-40df-a055-12cfa99752fd
+DevTools listening on ws://127.0.0.1:63544/devtools/browser/a4418106-0967-4bf5-9e07-f9687a86c656
+PASSED                   [ 84%]
+tests/test_registration.py::TestStellarBurgersRegistration::test_completed_registration 
+DevTools listening on ws://127.0.0.1:63568/devtools/browser/cb5c4d56-841d-4738-a129-2b85f595590a
+PASSED                                                   [ 92%]
+tests/test_registration.py::TestStellarBurgersRegistration::test_check_incorrect_password 
+DevTools listening on ws://127.0.0.1:63595/devtools/browser/25cd3348-1077-41d1-995c-61baad07ff88
 PASSED                                                 [100%]
 
-=========================================================== 13 passed in 304.32s (0:05:04) ============================================================ 
+=========================================================== 13 passed in 200.50s (0:03:20) ============================================================ 
