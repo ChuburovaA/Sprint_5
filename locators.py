@@ -40,3 +40,6 @@ class StellarBurgersLocators:
     AUTH_PAGE_PASSWORD_FIELD = (By.XPATH, ".//input[@name='Пароль']")  # Поле ввода пароля
     AUTH_FORM = (By.XPATH, ".//main//form")  # Форма ввода на странице авторизации
     HEADER_LOGIN = (By.XPATH, ".//h2[text()='Вход']")  # Заголовок "Вход" на странице авторизации
+
+    # Форма восстановления пароля
+    RECOVER_PAGE_LINK = (By.XPATH, ".//a[text()='Войти']")  # Ссылка "Войти" на странице восстановления пароля
