@@ -10,10 +10,8 @@ class StellarBurgersLocators:
     REG_PAGE_ERROR_MESSAGE = (By.CLASS_NAME, "input__error")
 
     # Кнопка "Войти в аккаунт"/"Оформить заказ" на Главной странице
-    MAIN_PAGE_LOGIN_BUTTON = (
-    By.XPATH, ".//button[text()='Войти в аккаунт']")  # Кнопка "Войти в аккаунт" на главной странице
-    MAIN_PAGE_ORDER_BUTTON = (
-    By.XPATH, ".//button[text()='Оформить заказ']")  # Кнопка "Оформить заказ" на главной странице
+    MAIN_PAGE_LOGIN_BUTTON = (By.XPATH, ".//button[text()='Войти в аккаунт']")  # Кнопка "Войти в аккаунт" на главной странице
+    MAIN_PAGE_ORDER_BUTTON = (By.XPATH, ".//button[text()='Оформить заказ']")  # Кнопка "Оформить заказ" на главной странице
 
     # Раздел Конструктор
     MAIN_PAGE_BREAD_TAB = (By.XPATH, ".//body//main//span[text()='Булки']")  # Вкладка Булки
@@ -22,17 +20,13 @@ class StellarBurgersLocators:
     MAIN_PAGE_TAB_CONSTRUCTOR = (By.XPATH, ".//div[contains(@class, 'current')]/span")  # выбранный таб в конструкторе
 
     # Личный кабинет
-    PROFILE_PAGE_LOGO_LINK = (
-    By.XPATH, ".//body//header//div/a[@href='/']")  # Ссылка на Лого на странице Личный кабинет
-    PROFILE_PAGE_CONSTRUCTOR_LINK = (
-    By.XPATH, ".//body//header//p[text()='Конструктор']")  # Сссылка на Конструктор на странице Личный кабинет
-    PROFILE_PAGE_SAVE_BUTTON = (
-    By.XPATH, ".//body//main//button[text()='Сохранить']")  # Кнопка "Сохранить" на странице Личный кабинет
-    PROFILE_PAGE_EXIT_BUTTON = (
-    By.XPATH, ".//body//main//button[text()='Выход']")  # Кнопка "Выход" на странице Личный кабинет
+    PROFILE_PAGE_LOGO_LINK = (By.XPATH, ".//body//header//div/a[@href='/']")  # Ссылка на Лого на странице Личный кабинет
+    PROFILE_PAGE_CONSTRUCTOR_LINK = (By.XPATH, ".//body//header//p[text()='Конструктор']")  # Сссылка на Конструктор на странице Личный кабинет
+    PROFILE_PAGE_SAVE_BUTTON = (By.XPATH, ".//body//main//button[text()='Сохранить']")  # Кнопка "Сохранить" на странице Личный кабинет
+    PROFILE_PAGE_EXIT_BUTTON = (By.XPATH, ".//body//main//button[text()='Выход']")  # Кнопка "Выход" на странице Личный кабинет
 
     MAIN_PAGE_PROFILE_LINK = (By.XPATH, ".//header//a[@href='/account']")  # Ссылка "Личный Кабинет" на главной странице
-
+    MAIN_MENU_ITEM_PROFILE = (By.XPATH, ".//a[text()='Профиль']")
 
     # Форма авторизации
     AUTH_PAGE_LOGIN_BUTTON = (By.XPATH, ".//button[text()='Войти']")  # Кнопка "Войти" на странице авторизации
