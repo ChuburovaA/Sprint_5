@@ -11,7 +11,7 @@ import URLS
 
 class TestStellarBurgersRegistration:
     def test_completed_registration(self, driver, page):
-        driver.get(settings.URL + "/register")
+        driver.get(URLS.URL + "/register")
         # оказалась на странице с регистрацией
         driver.find_element(*page.USER_NAME_INPUT).send_keys(StellarBurgersServiceTestData.NAME)
         email = generate_random_emails()
@@ -29,7 +29,7 @@ class TestStellarBurgersRegistration:
 
     def test_check_incorrect_password(self, driver, page):
         # проверка ввода некорректного пароля
-        driver.get(settings.URL + "/register")  # оказалась на странице с регистрацией
+        driver.get(URLS.URL + "/register")  # оказалась на странице с регистрацией
         WebDriverWait(driver, 5).until(expected_conditions.visibility_of_element_located(page.REG_BUTTON))
         driver.find_element(*page.USER_NAME_INPUT).send_keys(StellarBurgersServiceTestData.NAME)
         email = generate_random_emails()

@@ -13,7 +13,7 @@ class TestLogOutInAccountStellarBurgers:
 
     def test_check_button_exit_in_account(self, driver, page):
         # зашли в свой профиль
-        driver.get(settings.URL + "/login")
+        driver.get(URLS.URL + "/login")
         WebDriverWait(driver, 5).until(expected_conditions.visibility_of_element_located(page.HEADER_LOGIN))
         driver.find_element(*page.AUTH_PAGE_LOGIN_FIELD).send_keys(StellarBurgersServiceTestData.AUTH_EMAIL)
         driver.find_element(*page.AUTH_PAGE_PASSWORD_FIELD).send_keys(StellarBurgersServiceTestData.AUTH_PASSWORD)

@@ -11,7 +11,7 @@ class TestProfilePageStellarBurgers:
 
     def test_check_open_profile_from_main_page(self, driver, page):
         # проверяем переход по клику на "Личный кабинет" со стартовой страницы
-        driver.get(settings.URL)
+        driver.get(URLS.URL)
         WebDriverWait(driver, 5).until(expected_conditions.visibility_of_element_located(page.MAIN_PAGE_LOGIN_BUTTON))
         driver.find_element(*page.MAIN_PAGE_LOGIN_BUTTON).click()
 
@@ -23,7 +23,7 @@ class TestProfilePageStellarBurgers:
     def test_check_transfer_from_account_page_to_constructor(self, driver, page):
         # проверяем переход из личного кабинета по клику в "Конструктор"
         # зашли в свой профиль
-        driver.get(settings.URL + "/login")
+        driver.get(URLS.URL + "/login")
         WebDriverWait(driver, 5).until(expected_conditions.visibility_of_element_located(page.HEADER_LOGIN))
         driver.find_element(*page.AUTH_PAGE_LOGIN_FIELD).send_keys(StellarBurgersServiceTestData.AUTH_EMAIL)
         driver.find_element(*page.AUTH_PAGE_PASSWORD_FIELD).send_keys(StellarBurgersServiceTestData.AUTH_PASSWORD)
@@ -40,7 +40,7 @@ class TestProfilePageStellarBurgers:
     def test_check_transfer_from_account_page_to_logo_stellarburgers(self, driver, page):
         # проверяем переход из личного кабинета по клику Лого
         # зашли в свой профиль
-        driver.get(settings.URL + "/login")
+        driver.get(URLS.URL + "/login")
         WebDriverWait(driver, 5).until(expected_conditions.visibility_of_element_located(page.HEADER_LOGIN))
         driver.find_element(*page.AUTH_PAGE_LOGIN_FIELD).send_keys(StellarBurgersServiceTestData.AUTH_EMAIL)
         driver.find_element(*page.AUTH_PAGE_PASSWORD_FIELD).send_keys(StellarBurgersServiceTestData.AUTH_PASSWORD)

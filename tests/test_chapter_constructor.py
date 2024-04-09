@@ -11,7 +11,7 @@ class TestConstructorStellarBurgers:
 
     def test_open_bread_section(self, driver, page):
         # проверяем в конструкторе, что переход работает в раздел "Булки"
-        driver.get(settings.URL)
+        driver.get(URLS.URL)
         WebDriverWait(driver, 5).until(expected_conditions.visibility_of_element_located(page.MAIN_PAGE_LOGIN_BUTTON))
         # выбрала сначал другую категорию "Начинки", а затем проверила уже "Булки"
         driver.find_element(*page.MAIN_PAGE_FILLINGS_TAB).click()
@@ -21,7 +21,7 @@ class TestConstructorStellarBurgers:
 
     def test_open_sause_section(self, driver, page):
         # проверяем в конструкторе, что переход работает в раздел "Соусы"
-        driver.get(settings.URL)
+        driver.get(URLS.URL)
         WebDriverWait(driver, 5).until(expected_conditions.visibility_of_element_located(page.MAIN_PAGE_LOGIN_BUTTON))
         driver.find_element(*page.MAIN_PAGE_SOUCES_TAB).click()
 
@@ -29,7 +29,7 @@ class TestConstructorStellarBurgers:
 
     def test_open_filling_section(self, driver, page):
         # проверяем в конструкторе, что переход работает в раздел "Начинки"
-        driver.get(settings.URL)
+        driver.get(URLS.URL)
         WebDriverWait(driver, 5).until(expected_conditions.visibility_of_element_located(page.MAIN_PAGE_LOGIN_BUTTON))
         driver.find_element(*page.MAIN_PAGE_FILLINGS_TAB).click()
 
