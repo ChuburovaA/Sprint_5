@@ -5,37 +5,37 @@ from selenium.webdriver.support.wait import WebDriverWait
 from data import StellarBurgersServiceTestData
 from random_emails import generate_random_emails
 from conftest import driver
-from conftest import page
+from conftest import class_loc
 import URLS
 
 
 class TestStellarBurgersRegistration:
-    def test_completed_registration(self, driver, page):
+    def test_completed_registration(self, driver, class_loc):
         driver.get(URLS.URL + "/register")
         # оказалась на странице с регистрацией
-        driver.find_element(*page.USER_NAME_INPUT).send_keys(StellarBurgersServiceTestData.NAME)
+        driver.find_element(*class_loc.USER_NAME_INPUT).send_keys(StellarBurgersServiceTestData.NAME)
         email = generate_random_emails()
-        driver.find_element(*page.USER_EMAIL_INPUT).send_keys(email)
-        driver.find_element(*page.USER_PASSWORD_INPUT).send_keys("chuburova123")
-        driver.find_element(*page.REG_BUTTON).click()
+        driver.find_element(*class_loc.USER_EMAIL_INPUT).send_keys(email)
+        driver.find_element(*class_loc.USER_PASSWORD_INPUT).send_keys("chuburova123")
+        driver.find_element(*class_loc.REG_BUTTON).click()
         # теперь после регистрации прохожу авторизацию на "Вход"
-        WebDriverWait(driver, 5).until(expected_conditions.visibility_of_element_located(page.AUTH_PAGE_LOGIN_BUTTON))
-        driver.find_element(*page.AUTH_PAGE_LOGIN_FIELD).send_keys(email)
-        driver.find_element(*page.AUTH_PAGE_PASSWORD_FIELD).send_keys("chuburova123")
-        driver.find_element(*page.AUTH_PAGE_LOGIN_BUTTON).click()
-        WebDriverWait(driver, 5).until(expected_conditions.visibility_of_element_located(page.MAIN_PAGE_ORDER_BUTTON))
+        WebDriverWait(driver, 5).until(expected_conditions.visibility_of_element_located(class_loc.AUTH_PAGE_LOGIN_BUTTON))
+        driver.find_element(*class_loc.AUTH_PAGE_LOGIN_FIELD).send_keys(email)
+        driver.find_element(*class_loc.AUTH_PAGE_PASSWORD_FIELD).send_keys("chuburova123")
+        driver.find_element(*class_loc.AUTH_PAGE_LOGIN_BUTTON).click()
+        WebDriverWait(driver, 5).until(expected_conditions.visibility_of_element_located(class_loc.MAIN_PAGE_ORDER_BUTTON))
 
-        assert driver.find_element(*page.MAIN_PAGE_ORDER_BUTTON)
+        assert driver.find_element(*class_loc.MAIN_PAGE_ORDER_BUTTON)
 
-    def test_check_incorrect_password(self, driver, page):
+    def test_check_incorrect_password(self, driver, class_loc):
         # проверка ввода некорректного пароля
         driver.get(URLS.URL + "/register")  # оказалась на странице с регистрацией
-        WebDriverWait(driver, 5).until(expected_conditions.visibility_of_element_located(page.REG_BUTTON))
-        driver.find_element(*page.USER_NAME_INPUT).send_keys(StellarBurgersServiceTestData.NAME)
+        WebDriverWait(driver, 5).until(expected_conditions.visibility_of_element_located(class_loc.REG_BUTTON))
+        driver.find_element(*class_loc.USER_NAME_INPUT).send_keys(StellarBurgersServiceTestData.NAME)
         email = generate_random_emails()
-        driver.find_element(*page.USER_EMAIL_INPUT).send_keys(email)
-        driver.find_element(*page.USER_PASSWORD_INPUT).send_keys("al")
-        driver.find_element(*page.REG_BUTTON).click()
-        WebDriverWait(driver, 5).until(expected_conditions.visibility_of_element_located(page.REG_PAGE_ERROR_MESSAGE))
+        driver.find_element(*class_loc.USER_EMAIL_INPUT).send_keys(email)
+        driver.find_element(*class_loc.USER_PASSWORD_INPUT).send_keys("al")
+        driver.find_element(*class_loc.REG_BUTTON).click()
+        WebDriverWait(driver, 5).until(expected_conditions.visibility_of_element_located(class_loc.REG_PAGE_ERROR_MESSAGE))
 
-        assert driver.find_element(*page.REG_PAGE_ERROR_MESSAGE)
+        assert driver.find_element(*class_loc.REG_PAGE_ERROR_MESSAGE)

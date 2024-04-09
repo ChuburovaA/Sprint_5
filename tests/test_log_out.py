@@ -4,25 +4,25 @@ from selenium.webdriver.support.wait import WebDriverWait
 
 from data import StellarBurgersServiceTestData
 from conftest import driver
-from conftest import page
+from conftest import class_loc
 import URLS
 
 
 
 class TestLogOutInAccountStellarBurgers:
 
-    def test_check_button_exit_in_account(self, driver, page):
+    def test_check_button_exit_in_account(self, driver, class_loc):
         # зашли в свой профиль
         driver.get(URLS.URL + "/login")
-        WebDriverWait(driver, 5).until(expected_conditions.visibility_of_element_located(page.HEADER_LOGIN))
-        driver.find_element(*page.AUTH_PAGE_LOGIN_FIELD).send_keys(StellarBurgersServiceTestData.AUTH_EMAIL)
-        driver.find_element(*page.AUTH_PAGE_PASSWORD_FIELD).send_keys(StellarBurgersServiceTestData.AUTH_PASSWORD)
-        driver.find_element(*page.AUTH_PAGE_LOGIN_BUTTON).click()
+        WebDriverWait(driver, 5).until(expected_conditions.visibility_of_element_located(class_loc.HEADER_LOGIN))
+        driver.find_element(*class_loc.AUTH_PAGE_LOGIN_FIELD).send_keys(StellarBurgersServiceTestData.AUTH_EMAIL)
+        driver.find_element(*class_loc.AUTH_PAGE_PASSWORD_FIELD).send_keys(StellarBurgersServiceTestData.AUTH_PASSWORD)
+        driver.find_element(*class_loc.AUTH_PAGE_LOGIN_BUTTON).click()
         # нажали на кнопку "Личный кабинет" на главной странице
-        WebDriverWait(driver, 5).until(expected_conditions.visibility_of_element_located(page.MAIN_PAGE_ORDER_BUTTON))
-        driver.find_element(*page.MAIN_PAGE_PROFILE_LINK).click()
+        WebDriverWait(driver, 5).until(expected_conditions.visibility_of_element_located(class_loc.MAIN_PAGE_ORDER_BUTTON))
+        driver.find_element(*class_loc.MAIN_PAGE_PROFILE_LINK).click()
         # нажали на кнопку "Выход" в "Личном кабинете"
-        WebDriverWait(driver, 5).until(expected_conditions.visibility_of_element_located(page.PROFILE_PAGE_EXIT_BUTTON))
-        driver.find_element(*page.PROFILE_PAGE_EXIT_BUTTON).click()
+        WebDriverWait(driver, 5).until(expected_conditions.visibility_of_element_located(class_loc.PROFILE_PAGE_EXIT_BUTTON))
+        driver.find_element(*class_loc.PROFILE_PAGE_EXIT_BUTTON).click()
 
         driver.quit()
