@@ -6,7 +6,7 @@ from data import StellarBurgersServiceTestData
 from random_emails import generate_random_emails
 from conftest import driver
 from conftest import page
-import settings
+import URLS
 
 
 class TestStellarBurgersRegistration:
