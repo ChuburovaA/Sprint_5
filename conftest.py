@@ -1,12 +1,12 @@
 import pytest
-import settings
+import URLS
 from selenium import webdriver
 from locators import StellarBurgersLocators
 
 @pytest.fixture(scope='function')
 def driver():
     driver = webdriver.Chrome()
-    driver.get(settings.URL)
+    driver.get(URLS.URL)
 
     yield driver # возвращает
 
