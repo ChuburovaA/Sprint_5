@@ -13,6 +13,6 @@ def driver():
     driver.quit()
 
 @pytest.fixture(scope='function')
-def page():
-    page = StellarBurgersLocators()
-    return page
+def class_loc():
+    class_loc = StellarBurgersLocators()
+    return class_loc
