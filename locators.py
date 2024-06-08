@@ -26,7 +26,7 @@ class StellarBurgersLocators:
     PROFILE_PAGE_EXIT_BUTTON = (By.XPATH, ".//body//main//button[text()='Выход']")  # Кнопка "Выход" на странице Личный кабинет
 
     MAIN_PAGE_PROFILE_LINK = (By.XPATH, ".//header//a[@href='/account']")  # Ссылка "Личный Кабинет" на главной странице
-    MAIN_MENU_ITEM_PROFILE = (By.XPATH, ".//a[text()='Профиль']")
+    MAIN_MENU_ITEM_PROFILE = (By.XPATH, ".//a[text()='Профиль']") #Ссылка на "Профиль" в личном кабинете
 
     # Форма авторизации
     AUTH_PAGE_LOGIN_BUTTON = (By.XPATH, ".//button[text()='Войти']")  # Кнопка "Войти" на странице авторизации
